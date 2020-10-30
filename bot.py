@@ -1,3 +1,5 @@
+#!/home/pi/TCCbot/.env/bin/python3
+
 import telebot
 import time
 import os
@@ -14,6 +16,10 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def Send_help(message):
 	bot.reply_to(message, "To use this bot, say something or send a pdf for me to process it")
+
+@bot.message_handler(commands=["kill"])
+def get_kill(message):
+    print(a)
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_all(message):
